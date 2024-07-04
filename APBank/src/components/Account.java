@@ -1,9 +1,7 @@
 package components;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public abstract class Account {
+public abstract class Account 
+{
     protected static int nextAccountNumber = 1;
 
     protected String label;
@@ -11,27 +9,20 @@ public abstract class Account {
     protected int accountNumber;
     protected Client client;
 
-    public Account(String label, Client client) {
+    public Account(String label, Client client) 
+    {
         this.label = label;
         this.client = client;
         this.accountNumber = nextAccountNumber++;
         this.balance = 0.0;
     }
 
-    // Méthodes abstraites
+    // Méthode abstraite
     public abstract void updateBalance(Flow flow);
-
-    // Getters and setters
-    public double getBalance() {
-        return balance;
-    }
-
-    public int getAccountNumber() {
-        return accountNumber;
-    }
-
+    
     @Override
-    public String toString() {
+    public String toString() 
+    {
         return "Account{" +
                 "accountNumber=" + accountNumber +
                 ", balance=" + balance +
@@ -39,4 +30,53 @@ public abstract class Account {
                 ", client=" + client.toString() +
                 '}';
     }
+
+	public static int getNextAccountNumber() 
+	{
+		return nextAccountNumber;
+	}
+
+	public static void setNextAccountNumber(int nextAccountNumber) 
+	{
+		Account.nextAccountNumber = nextAccountNumber;
+	}
+
+	public String getLabel() 
+	{
+		return label;
+	}
+
+	public void setLabel(String label) 
+	{
+		this.label = label;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) 
+	{
+		this.balance = balance;
+	}
+
+	public int getAccountNumber() 
+	{
+		return accountNumber;
+	}
+
+	public void setAccountNumber(int accountNumber) 
+	{
+		this.accountNumber = accountNumber;
+	}
+
+	public Client getClient() 
+	{
+		return client;
+	}
+
+	public void setClient(Client client) 
+	{
+		this.client = client;
+	}
 }

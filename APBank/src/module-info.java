@@ -4,7 +4,3 @@
 /**
  * 
  */
-module bank_java 
-{
-	
-}

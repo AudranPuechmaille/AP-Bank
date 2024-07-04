@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<accounts>
+    <account>
+        <accountNumber>1</accountNumber>
+        <label>Checking Account</label>
+        <balance>1000.0</balance>
+        <client>
+            <firstName>Audran</firstName>
+            <lastName>P</lastName>
+            <clientNumber>101</clientNumber>
+        </client>
+    </account>
+    <account>
+        <accountNumber>2</accountNumber>
+        <label>Savings Account</label>
+        <balance>5000.0</balance>
+        <client>
+            <firstName>Danaele</firstName>
+            <lastName>P</lastName>
+            <clientNumber>102</clientNumber>
+        </client>
+    </account>
+    <!-- Ajoutez d'autres comptes si nécessaire -->
+</accounts>

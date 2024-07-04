@@ -1,0 +1,39 @@
+[
+    {
+        "type": "Debit",
+        "comment": "Debit of 50€ from account n°1",
+        "identifier": 1,
+        "amount": 50.0,
+        "targetAccountNumber": 1,
+        "effect": true,
+        "dateOfFlow": "2024-07-06"
+    },
+    {
+        "type": "Credit",
+        "comment": "Credit of 100.50€ on all current accounts",
+        "identifier": 2,
+        "amount": 100.5,
+        "targetAccountNumber": -1,
+        "effect": true,
+        "dateOfFlow": "2024-07-06"
+    },
+    {
+        "type": "Credit",
+        "comment": "Credit of 1500€ on all savings accounts",
+        "identifier": 3,
+        "amount": 1500.0,
+        "targetAccountNumber": -1,
+        "effect": true,
+        "dateOfFlow": "2024-07-06"
+    },
+	{
+	        "type": "Transfer",
+	        "comment": "Transfer of 50€ from account n°1 to account n°2",
+	        "identifier": 4,
+	        "amount": 50.0,
+	        "targetAccountNumber": 2,
+	        "effect": true,
+	        "issuingAccountNumber": 1,
+	        "dateOfFlow": "2024-07-05"
+	 }
+]

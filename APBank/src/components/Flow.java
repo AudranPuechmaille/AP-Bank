@@ -1,8 +1,12 @@
 package components;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 import java.time.LocalDate;
 
-public abstract class Flow {
+@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
+public abstract class Flow 
+{
     private String comment;
     private int identifier;
     private double amount;
@@ -10,7 +14,13 @@ public abstract class Flow {
     private boolean effect;
     private LocalDate dateOfFlow;
 
-    public Flow(String comment, int identifier, double amount, int targetAccountNumber, boolean effect) {
+    public Flow() 
+    {
+        // Constructeur par défaut requis par Jackson
+    }
+
+    public Flow(String comment, int identifier, double amount, int targetAccountNumber, boolean effect) 
+    {
         this.comment = comment;
         this.identifier = identifier;
         this.amount = amount;
@@ -19,82 +29,69 @@ public abstract class Flow {
         this.dateOfFlow = LocalDate.now().plusDays(2); // Opérations effectuées 2 jours après la création du flux
     }
 
-    
-
-    public String getComment() {
+    public String getComment() 
+    {
 		return comment;
 	}
 
-
-
-	public void setComment(String comment) {
+	public void setComment(String comment) 
+	{
 		this.comment = comment;
 	}
 
-
-
-	public int getIdentifier() {
+	public int getIdentifier() 
+	{
 		return identifier;
 	}
 
-
-
-	public void setIdentifier(int identifier) {
+	public void setIdentifier(int identifier) 
+	{
 		this.identifier = identifier;
 	}
 
-
-
-	public double getAmount() {
+	public double getAmount() 
+	{
 		return amount;
 	}
 
-
-
-	public void setAmount(double amount) {
+	public void setAmount(double amount) 
+	{
 		this.amount = amount;
 	}
 
-
-
-	public int getTargetAccountNumber() {
+	public int getTargetAccountNumber() 
+	{
 		return targetAccountNumber;
 	}
 
-
-
-	public void setTargetAccountNumber(int targetAccountNumber) {
+	public void setTargetAccountNumber(int targetAccountNumber) 
+	{
 		this.targetAccountNumber = targetAccountNumber;
 	}
-
-
-
-	public boolean isEffect() {
+	
+	public boolean isEffect() 
+	{
 		return effect;
 	}
 
-
-
-	public void setEffect(boolean effect) {
+	public void setEffect(boolean effect) 
+	{
 		this.effect = effect;
 	}
 
-
-
-	public LocalDate getDateOfFlow() {
+	public LocalDate getDateOfFlow() 
+	{
 		return dateOfFlow;
 	}
 
-
-
-	public void setDateOfFlow(LocalDate dateOfFlow) {
+	public void setDateOfFlow(LocalDate dateOfFlow) 
+	{
 		this.dateOfFlow = dateOfFlow;
 	}
 
-
-
 	@Override
-    public String toString() {
+    public String toString() 
+	{
         return this.getClass().getSimpleName() + "{" +
                 "comment='" + comment + '\'' +
                 ", identifier=" + identifier +
